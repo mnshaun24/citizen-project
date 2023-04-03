@@ -1,14 +1,15 @@
-require("dotenv").config();
+const myKey = "WVmvBvMaMI2eYo2ltSDdm900nMJYWF0O5Jpp6k4s"
+const queryURL =  "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-bdfm";
+
 
 const train = document.querySelector(".train");
 const btn = document.querySelector("button");
 
 var getFeed = function() {
-    console.log("action")
-    fetch(QUERY_URL, {
+    fetch(queryURL, {
         method: "GET",
         headers: {
-            "x-api-key": MY_KEY
+            "x-api-key": myKey
         }
     })
 }
