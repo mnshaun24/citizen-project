@@ -8,9 +8,16 @@ const btn = document.querySelector("button");
 var getFeed = function() {
     fetch(queryURL, {
         method: "GET",
+        responseType: "arraybuffer",
         headers: {
             "x-api-key": myKey
         }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error({ message: "Oops. Try again!" });
+        } 
+        console.log(response);
     })
 }
 
